@@ -1,0 +1,40 @@
+Distance_direction,Location,Latitude,Longitude,Thickness_reported,Thickness_cm
+0,Tambora,-8.25,118.0,4 ft,120
+20,Foot of Tambora,-8.27,118.14,4 ft,120
+35/E,Sanggar,-8.38,118.29,3 ft,90
+70/E,Bima,-8.45,118.72,3.75 in,9.5
+80/S,Sumbawa,-8.55,117.8,2 ft,60
+120/S,G6.5,-9.21,118.46,,20
+340/S,T84 42,-10.78,116.3,,4
+90/W,Lombok,-8.58,116.34,2 ft,60
+180/W,173,-7.96,116.36,,12
+190/W,T84-37,-7.86,116.33,,20
+210/W,W-Lombok,-8.53,116.05,1.5 ft,45
+300/W,Bali,-8.4,115.18,1 ft,30
+340/W,172,-7.55,115.01,,12
+400/W,Banjiwangi,-8.21,114.37,8–10 in,20
+470/W,Panarukan,-7.71,113.97,2 in,5
+470/W,Sumenep,-7.01,113.86,2 in,5
+470/W,Besuki,-7.73,113.7,,5
+530/W,Probolinggo,-7.76,113.21,2 in,5
+560/W,Pasuruan,-7.64,112.9,Ash fall,5
+590/W,Surabaja,-7.13,112.74,Ash fall,2
+600/W,Gresik,-7.16,112.65,<2 in,5
+750/W,Rembang,-6.7,111.34,Ash fall,0
+790/W,Surakarta,-7.57,110.82,Very thick,0
+850/W,Yogyakarta,-7.78,110.37,Very thick,0
+890/W,Semarang,-6.97,110.42,Ash fall,0
+990/W,Tegal,-6.87,109.13,Slight,0
+1250/W,Bogor,-6.59,106.79,Ash fall,0
+1250/W,Jakarta,-6.21,106.85,Back of knife,0.25
+1250/W,Bengkulu,-3.8,102.26,Ash–dust,0.1
+1380/W,Makassar,-5.22,119.41,1.5 in,3.7
+420/N,T84-27,-4.46,118.8,,3
+1500/N,Martapura,-3.42,114.84,Ash fall,0
+1500/N,Brunei,4.54,114.73,Heaps of the dust,0.1
+110/NE,167,-7.82,118.8,,9
+140/NE,170,-7.6,118.8,Large,0
+250/NE,180,-7.89,120.2,,20
+1380/NE,Banda Island,-4.55,129.93,Ash fall,0.1
+1450/NE,Ternate,0.78,127.83,No ash fall,0
+

@@ -1,0 +1,9 @@
+	Session	11.11.
+Krigging - Idee zum Extrapolieren der Daten
+Inverse distance weighting - Idee zur Polation der ash fall Daten
+Satelite Images for agricultural usage - Bedingt besserer Suchbegriff für Karten landwirtschaftlicher Nutzung
+Damage classes:
+	(1)	ash fall below 1 cm - little damage possible to livestock, plants and humans; nutrient rich ash fall may even have positive Impact on soil
+	(2)	ash fall of 1 cm up to 10 cm - life and society are laid down
+	(3)	ash fall Above 10 cm up to 100 cm - stronger incapitation of human society and appearance of more severe long term effects
+	(4)	ash fall Above 100 cm - total burial of basically anything; life in this region is hardly possible wihtout MAJOR efforts

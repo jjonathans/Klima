@@ -1,9 +1,42 @@
 	Session	11.11.
-Krigging - Idee zum Extrapolieren der Daten
-Inverse distance weighting - Idee zur Polation der ash fall Daten
+Krigging - Idee zum Extrapolieren der Daten (ist Arsch)
+Inverse distance weighting - Idee zur Polation der ash fall Daten (?)
+
 Satelite Images for agricultural usage - Bedingt besserer Suchbegriff für Karten landwirtschaftlicher Nutzung
+
+	Session 02.12.
+Interpolation funzt.
+Technik der Wahl ist "Spatial Smoothing".
+
+Continuing work on Damage classes:
 Damage classes:
-	(1)	ash fall below 1 cm - little damage possible to livestock, plants and humans; nutrient rich ash fall may even have positive Impact on soil
-	(2)	ash fall of 1 cm up to 10 cm - life and society are laid down
-	(3)	ash fall Above 10 cm up to 100 cm - stronger incapitation of human society and appearance of more severe long term effects
-	(4)	ash fall Above 100 cm - total burial of basically anything; life in this region is hardly possible wihtout MAJOR efforts
+	(1)	Ash fall below 1 cm:
+		Little damage possible to livestock (possible irritation of skin & eyes and fluorosis may happen but unlikely), plants (acid damges, discolouration or abrasion during clean-up) and humans (possible irritation of skin & eyes).
+		Nutrient rich ash fall may even have positive Impact on soil.
+		Key quantities are soluble salt burden, particle size and abbrasiveness.
+
+	(2)	Ash fall of 1 cm up to 10 cm:
+		Damage to lifestock is similar to less ash fall but generally more severe.
+		Access to clean drinking water and food is likely impaired and nutrient supplements necessary.
+		Ingestion of much Arsch likely leads to intestinal blockages and fluorosis is more likely.
+		Plants and agriculture may suffer from the ashes weight and shading of the sun.
+		Acidic leachate (=Sickerwasser) likely damgages fruit and foilage.
+		The impact on agriculture potentially leads to food shortages for humans in surrounding areas.
+		Key quantities are soluble salt burden and mechanical strength of the ash layer.
+
+	(3)	Ash fall above 10 cm and up to 100 cm:
+		Generally a stronger incapitation of human society and appearance of more severe long term effects.
+		Agriculture suffers severly from heavy loads of ash.
+		Planted crops are lost and new ones cannot be sown due to the soil being buried below the thick layers of ash.
+		Rehab of soil by human interventioin is likely necessary.
+		Therefore humans are bound to face food shortages.
+		Trees are damaged by the load and shading from the sun.
+		Key quantities are density, loading, particle size and thickness of the ash cover.
+
+	(4)	Ash fall Above 100 cm:
+		Total burial of basically anything.
+		Life in this region is hardly possible wihtout MAJOR efforts to remove the ash cover and restoration of soil and environment.
+
+	(5) Conclusion and global effects:
+		Overall one may expect 100s of millions of dollars in "economical" damages besides thousands of casualties.
+		

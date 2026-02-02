@@ -22,6 +22,7 @@ printed to the console.
 2. Data
 -------------
 Main file: tambora_int_data.py
+
 The script expects the following input files:
 
 (A) tambora_ashfall.csv

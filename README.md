@@ -19,8 +19,9 @@ The main output is a global visualization (map) and several quantitative summari
 printed to the console.
 
 
-2. Input Data
+2. Data
 -------------
+Main file: tambora_int_data.py
 The script expects the following input files:
 
 (A) tambora_ashfall.csv

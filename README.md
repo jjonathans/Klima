@@ -4,7 +4,7 @@
 Tambora Ashfall – LULC Overlay & Impact Statistics
 =================================================
 
-1. Purpose
+### 1. Purpose
 ----------
 This project provides a reproducible workflow to:
   (1) load point-based ashfall thickness measurements (Tambora eruption),
@@ -17,7 +17,7 @@ The main output is a global visualization (map) and several quantitative summari
 printed to the console.
 
 
-2. Data
+### 2. Data
 -------------
 Main file: tambora_int_data.py
 The script expects the following input files:
@@ -49,7 +49,7 @@ Additionally, the script loads a base land layer using:
   - geodatasets.get_path("naturalearth.land")
 
 
-3. Workflow Summary
+### 3. Workflow Summary
 -------------------
 Step 1: Load country boundaries (EPSG:4326)
 
@@ -74,7 +74,7 @@ Step 10: Compute affected country areas (intersection country polygons with ash 
 Step 11: Print results and render final map with legends
 
 
-4. Outputs
+### 4. Outputs
 ----------
 (A) Visualization:
   - Global map with:
@@ -91,7 +91,7 @@ Step 11: Print results and render final map with legends
   - rough LULC-area breakdown for Indonesia
 
 
-5. Parameters / Key Settings
+### 5. Parameters / Key Settings
 ----------------------------
 The script contains several key parameters:
 
@@ -117,7 +117,7 @@ Note:
   This is intentional in the original code and should not be mixed up.
 
 
-6. Dependencies
+### 6. Dependencies
 ---------------
 Required Python packages include:
   - numpy
@@ -133,7 +133,7 @@ In line 28 is an absolut Path. The file is in the github, store it lokaly and ch
 Everything else should work with the python packages.
 
 
-7. Notes / Limitations
+### 7. Notes / Limitations
 ----------------------
 - The interpolation is performed in geographic coordinates (degrees). This is not a
   true metric distance. For global-scale physics-based modelling one would typically
@@ -147,15 +147,12 @@ Everything else should work with the python packages.
   Absolute area results depend on resolution and projection choices.
 
 
-## Struktur Versionshistorie
-
 
 ## Indonesia interactive stellite map
 https://platform.indonesia.mapbiomas.org/coverage/coverage_lclu?t[regionKey]=indonesia&t[ids][]=4-1-1&t[divisionCategoryId]=2&tl[id]=1&tl[themeKey]=coverage&tl[subthemeKey]=coverage_lclu&tl[pixelValues][]=40&tl[pixelValues][]=35&tl[pixelValues][]=9&tl[pixelValues][]=21&tl[pixelValues][]=30&tl[pixelValues][]=24&tl[pixelValues][]=25&tl[pixelValues][]=3&tl[pixelValues][]=5&tl[pixelValues][]=76&tl[pixelValues][]=27&tl[pixelValues][]=13&tl[pixelValues][]=31&tl[pixelValues][]=33&tl[legendKey]=default&tl[year]=2024
 
-https://registry.opendata.aws/esa-worldcover-vito/?utm_source=chatgpt.com
-
 
 Es lässt sich eine Tiff bzw .tif Datei herunterladen, die sehr groß ist. Diese ist aber nicht mit normalen Means auszulesen - nicht verwunderlich.
-Upload der Datei steht aus.
-Genutzte Parameter waren (a) Indonesien, (b) Coverage, (c) 2024 und nicht mehr, meine ich.
+Upload der Datei steht aus - aufgrund der Größe der datei nicht möglich.
+Bitte Internetressource aufsuchen und eigenständig heruntergladen.
+Genutzte Parameter waren (a) Indonesien, (b) Coverage, (c) 2024 und nicht mehr, meine ich (Alex; download Ende 2025).

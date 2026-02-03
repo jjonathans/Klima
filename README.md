@@ -52,15 +52,25 @@ Additionally, the script loads a base land layer using:
 3. Workflow Summary
 -------------------
 Step 1: Load country boundaries (EPSG:4326)
+
 Step 2: Load ashfall point data, clean thickness values, create GeoDataFrame
+
 Step 3: Load and downsample LULC raster; ensure EPSG:4326; plot as map overlay
+
 Step 4: Interpolate ash thickness using RBF (log10 transform)
+
 Step 5: Apply an anisotropic taper function (faster decay south of Tambora)
+
 Step 6: Plot ash field + measurement points
+
 Step 7: Build a polygon mask from the ash field above a threshold
+
 Step 8: Rasterize the ash polygon to the LULC raster grid
+
 Step 9: Compute LULC statistics within the ash-affected region
+
 Step 10: Compute affected country areas (intersection country polygons with ash polygon)
+
 Step 11: Print results and render final map with legends
 
 

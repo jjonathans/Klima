@@ -7,18 +7,21 @@ import numpy as np
 
 from scipy.interpolate import Rbf
 from scipy.spatial import cKDTree
-from scipy.ndimage import binary_closing, binary_opening
+from scipy.ndimage import binary_fill_holes, binary_closing, binary_opening
 
 import rasterio
 from rasterio.enums import Resampling
 from rasterio.vrt import WarpedVRT
 from rasterio.transform import from_bounds
 from rasterio.features import shapes, geometry_mask
+from rasterio.features import sieve
 
 from shapely.geometry import shape
 from matplotlib.colors import LogNorm, ListedColormap, to_rgba
 
 import matplotlib.patches as mpatches
+
+
 
 
 # Länder-Shapefile laden (brauche ich später, um betroffene Länder zu finden)
@@ -197,7 +200,7 @@ lon0, lat0 = 118.0, -8.25
 dx = (XI - lon0) * np.cos(np.deg2rad(lat0))  # lon auf Breitenkreis skalieren
 dy = (YI - lat0)
 
-south_boost = 1.4
+south_boost = 2
 dy_eff = np.where(dy < 0, dy * south_boost, dy)
 
 # effektive Distanz in Grad
@@ -218,8 +221,8 @@ ZI = ZI * w
 ZI[w == 0.0] = 0.0
 
 
-# nächster Punkt: dist zur nächsten Messung (nutzt du gerade nicht aktiv)
-# kann man aber z.B. als cutoff benutzen (wenn du irgendwann willst)
+# nächster Punkt: dist zur nächsten Messung (gerade ungenutzt)
+# wurde als cutoff genutzt, sorgt für unsauberes bild
 tree = cKDTree(np.column_stack([x, y]))
 dist, _ = tree.query(np.column_stack([XI.ravel(), YI.ravel()]), k=1)
 dist = dist.reshape(XI.shape)
@@ -234,8 +237,19 @@ vmin = max(np.nanmin(ZI[ZI > 0]), 0.05)
 vmax = np.nanmax(ZI)
 norm = LogNorm(vmin=vmin, vmax=vmax)
 
-threshold = 0  # cm
-ZI_masked = np.where(ZI >= threshold, ZI, np.nan)
+from scipy.ndimage import binary_fill_holes, binary_closing, binary_opening
+from rasterio.features import sieve
+
+threshold_plot = 100  #Plot-Threshold in cm
+
+M = (ZI >= threshold_plot) & np.isfinite(ZI)
+
+M = binary_fill_holes(M)
+M = binary_closing(M, iterations=2)
+M = binary_fill_holes(M)
+
+# 6) Jetzt plotten: außerhalb Maske unsichtbar
+ZI_masked = np.where(M, ZI, np.nan)
 
 im = ax.pcolormesh(
     XI, YI, ZI_masked,
@@ -292,18 +306,27 @@ ax.set_ylabel("Latitude")
 ax.legend(loc="upper right")
 
 
-# erzeugt interpolierten Ash-Grid ein Polygon
-threshold = 0.1
-print(threshold)
+threshold_calc = 0.1  # <- dein Rechen-Threshold
 
-mask = (ZI > threshold) & (~np.isnan(ZI))
-mask_uint8 = mask.astype("uint8")
+# 1) Binärmaske für Polygonisierung
+mask = (ZI > threshold_calc) & np.isfinite(ZI)
 
-# etwas Morphologie, damit das Polygon zusammenhängend ist
-mask = (ZI > threshold) & np.isfinite(ZI)
+# 2) Löcher füllen (wichtig!)
+mask = binary_fill_holes(mask)
+
+# 3) Glätten: Closing verbindet, Opening entfernt dünne Ausläufer
 mask = binary_closing(mask, iterations=2)
 mask = binary_opening(mask, iterations=1)
+
 mask_uint8 = mask.astype("uint8")
+
+# 4) Kleine Inseln entfernen (Pixelanzahl; musst du einstellen)
+MIN_PIXELS = 500   # Startwert: 200..1000 (bei 600x600)
+mask_uint8 = sieve(mask_uint8, size=MIN_PIXELS)
+
+# optional nochmal Löcher füllen (falls sieve neue Löcher erzeugt)
+mask_uint8 = binary_fill_holes(mask_uint8.astype(bool)).astype("uint8")
+
 
 transform = from_bounds(xmin, ymin, xmax, ymax, nx, ny)
 
@@ -345,7 +368,7 @@ total_full = dict(zip(vals_full.astype(int), counts_full))
 
 total_pixels_ash = counts_ash.sum()
 
-print(f"\n=== LULC-Klassen mit Asche > {threshold} cm (auf resampeltem Grid) ===\n")
+print(f"\n=== LULC-Klassen mit Asche > {threshold_calc} cm (auf resampeltem Grid) ===\n")
 print("Code | Klasse                      | Pixels (Ash) | Anteil an Ash | Anteil Klasse belegt")
 print("-"*90)
 
@@ -400,7 +423,7 @@ area_ash_idn = land_area["Indonesia"]  # km² Aschefläche in Indonesien
 for code, s in lulc_stats.items():
     frac = s["share_ash"] / 100.0
     area_class_km2 = area_ash_idn * frac
-    print(f"{code:3d}  {s['name']:27s}  ~ {area_class_km2:10.1f} km² unter Asche > {threshold} cm in Indonesien")
+    print(f"{code:3d}  {s['name']:27s}  ~ {area_class_km2:10.1f} km² unter Asche > {threshold_calc} cm in Indonesien")
 
 
 # Legende für die LULC Klassen 

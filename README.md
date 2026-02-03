@@ -104,9 +104,9 @@ The script contains several key parameters:
     threshold = 0.1 (cm)
 
 Note:
-  The script contains two different variables called "threshold":
-    - one for visualization masking (threshold = 0)
-    - one for polygon/mask generation (threshold = 0.1)
+  The script contains two different variables called "threshold_calc" and "threshold_plot":
+    - one for visualization masking (threshold_plot = x)
+    - one for polygon/mask generation (threshold_calc = x)
   This is intentional in the original code and should not be mixed up.
 
 

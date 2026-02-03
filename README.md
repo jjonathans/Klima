@@ -119,6 +119,9 @@ Required Python packages include:
   - rasterio
   - geodatasets
 
+In line 28 is an absolut Path. The file is in the github, store it lokaly and change it in the code.
+Everything else should work with the python packages.
+
 
 7. Notes / Limitations
 ----------------------

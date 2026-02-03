@@ -1,6 +1,4 @@
 # Klima - Proejekt zur Wunderling VL
-## @Sonathan
-Bitte commit deinen aktuellsten Code in Klima/scripts/
 
 ## Struktur des Projekts & Git
 Tambora Ashfall – LULC Overlay & Impact Statistics
@@ -22,7 +20,6 @@ printed to the console.
 2. Data
 -------------
 Main file: tambora_int_data.py
-
 The script expects the following input files:
 
 (A) tambora_ashfall.csv

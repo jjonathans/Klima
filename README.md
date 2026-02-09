@@ -14,7 +14,8 @@ This project provides a reproducible workflow to:
   (5) identify affected countries and estimate affected land area per country.
 
 The main output is a global visualization (map) and several quantitative summaries
-printed to the console.
+printed to the console or saved as a extra file.
+There is now an option to geht a gif for visualization.
 
 
 ### 2. Data
@@ -131,6 +132,7 @@ Required Python packages include:
 
 In line 28 is an absolut Path. The file is in the github, store it lokaly and change it in the code.
 Everything else should work with the python packages.
+See 2 c).
 
 
 ### 7. Notes / Limitations

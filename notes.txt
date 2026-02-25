@@ -1,14 +1,5 @@
-	Session	11.11.
-Krigging - Idee zum Extrapolieren der Daten (ist Arsch)
-Inverse distance weighting - Idee zur Polation der ash fall Daten (?)
 
-Satelite Images for agricultural usage - Bedingt besserer Suchbegriff für Karten landwirtschaftlicher Nutzung
-
-	Session 02.12.
-Interpolation funzt.
-Technik der Wahl ist "Spatial Smoothing".
-
-Continuing work on Damage classes:
+Based on the Damage Assessment_Class Paper
 Damage classes:
 	(1)	Ash fall below 1 cm:
 		Little damage possible to livestock (possible irritation of skin & eyes and fluorosis may happen but unlikely), plants (acid damges, discolouration or abrasion during clean-up) and humans (possible irritation of skin & eyes).
@@ -39,4 +30,5 @@ Damage classes:
 
 	(5) Conclusion and global effects:
 		Overall one may expect 100s of millions of dollars in "economical" damages besides thousands of casualties.
+
 		

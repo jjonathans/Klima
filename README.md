@@ -1,8 +1,23 @@
 # Klima - Proejekt zur Wunderling VL
 
-## Struktur des Projekts & Git
+## Structure of Projects & Git
 Tambora Ashfall – LULC Overlay & Impact Statistics
 =================================================
+
+### Folders:
+# Data
+
+Everything in here you need to run the code
+
+# Scripts
+
+Test Files and all of the analysis python codes.
+
+# Damage_Assessment
+
+Everything we used for the Damage Class Assessment, Paper and your interpretation
+
+### For the Main File: tamabara_int_data.py
 
 ### 1. Purpose
 ----------
